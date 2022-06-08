@@ -4,7 +4,10 @@ class SessionsController < ApplicationController
 
   def create
   # authenticate the user
+  #As a non-logged-in user, I want to login with my email and password and be redirected to the "Places" page.
+  #As a non-logged-in user, I want to be redirected to the login page if I don't provide the correct email and password combination.
     @user = User.find_by({ "email" => params["email"] })
+    
     if @user
       if BCrypt::Password.new(@user["password"]) == params["password"]
         session["user_id"] = @user["id"]

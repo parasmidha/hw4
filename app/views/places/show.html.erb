@@ -13,6 +13,7 @@
       <div class="col-lg-4 pb-2">
         <h3><%= post["title"] %></h3>
         <h4><%= post["posted_on"] %></h4>
+        <%#creating an entry for image uploaded by user%>
         <% if post.uploaded_image.attached? %>
           <img src="<%= url_for(post.uploaded_image) %>" class="img-fluid">
         <% else %>
@@ -28,6 +29,6 @@
 
 
   <p>
-    <a href="/places">Back to all places</a>
+    <a href="/places">Go back to all places</a>
   </p>
 </div>
